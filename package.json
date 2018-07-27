@@ -25,7 +25,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/tsayen/dom-to-image.git"
+        "url": "git+https://github.com/petrNikolaev1/dom-to-image.git"
     },
     "keywords": [
         "dom",
