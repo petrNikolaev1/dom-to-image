@@ -231,8 +231,13 @@
                 copyStyle(window.getComputedStyle(original), clone.style);
 
                 function copyStyle(source, target) {
+                    target.fontStretch == '';
+
                     if (source.cssText) target.cssText = source.cssText;
                     else copyProperties(source, target);
+
+                    target.fontStretch = 'normal';
+                    // here's my fix
 
                     function copyProperties(source, target) {
                         util.asArray(source).forEach(function (name) {
@@ -419,7 +424,7 @@
         function canvasToBlob(canvas) {
             if (canvas.toBlob)
                 return new Promise(function (resolve) {
-                    canvas.toBlob(resolve);
+                    canvas.toBlob(resolve, 'image/jpeg', 1.0);
                 });
 
             return toBlob(canvas);
